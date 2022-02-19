@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Joe's Hotdogs </title>
+    </head>
+    <body>
+        <h1> Your Order: </h1>
+        <script language="javascript">
+            var h = prompt("How many hotdogs do you want? ($3.75 each)");
+            var f = prompt("How many fries do you want? ($2.00 each)");
+            var s = prompt("How many sodas do you want? ($1.80 each)");
+            document.write(h + " hotdogs<br />");
+            document.write(f + " fries<br />");
+            document.write(s + " sodas<br />");
+            var x = (3.75 * h) + (2.00 * f) + (1.80 * s);
+            document.write("Subtotal = $" + x.toFixed(2) + "<br />");
+            if (x >= 20) {
+                var y = x * .10;
+                x = x - y;
+                document.write("Discount = $" + y.toFixed(2) + "<br />");
+            }
+            var t = x * 0.0625;
+            document.write("Tax = $" + t.toFixed(2) + "<br />");
+            var z = x + t;
+            document.write("Total = $" + z.toFixed(2) + "<br />");
+            
+            
+        </script>
+    </body>
+</html>
