@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <title> Joe's Hotdogs </title>
+        
+        <style>
+            h1 {font-size: 25px;}
+            h2 {font-size: 25px;}
+            label {font-size: 22px;}
+            select {font-size: 18px;}
+            button {font-size: 25px;}
+            input {font-size: 22px;}
+        </style>
+    </head>
+    <body>
+        
+        <h1>Please Select Your Order: </h1>
+        
+        <script language="javascript">
+            function calculateTotal() {
+                var h, f, s;
+                h = parseInt(document.getElementById("hotdogs").value);
+                f = parseInt(document.getElementById("fries").value);
+                s = parseInt(document.getElementById("sodas").value);
+                
+                var total = (3.75 * h) + (2.00 * f) + (1.80 * s);
+                
+                if (total == 0) {
+                    document.getElementById("total").value = 
+                    "Error! No items ordered";
+                } else {
+                    document.getElementById("total").value = total;
+                }
+            }
+        </script>
+        </br>
+        
+        <label for="hotdogs">Number of hot dogs ($3.75):</label>
+        <select name="hotdogs" id="hotdogs">
+            <option value="0" selected></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+        </br> </br>
+        
+        <label for="fries">Number of fries ($2.00):</label>
+        <select name="fries" id="fries">
+            <option value="0" selected></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+        </br> </br>
+        
+        <label for="sodas">Number of sodas ($1.80):</label>
+        <select name="sodas" id="sodas">
+            <option value="0" selected></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+        </br> </br>
+        <button onclick="calculateTotal()">Order</button>
+        <h2>Total = <input id="total"></h2>
+    </body>
+</html>
+
